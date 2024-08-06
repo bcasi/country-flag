@@ -14,13 +14,14 @@ const Countries = () => {
 
   return (
     <ul className={styles.wrapper}>
-      {country.map((res) => {
-        return (
-          <div>
-            <CountryList flags={res.flags.png} name={res.name.common} />
-          </div>
-        );
-      })}
+      {country?.length > 0 &&
+        country.map((res) => {
+          return (
+            <div key={res.name.common}>
+              <CountryList flags={res.flags.png} name={res.name.common} />
+            </div>
+          );
+        })}
     </ul>
   );
 };
